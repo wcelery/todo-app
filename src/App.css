@@ -10,3 +10,7 @@
 .todo-item {
   list-style-type: none;
 }
+
+.completed {
+  color: red;
+}
