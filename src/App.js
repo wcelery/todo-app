@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const [inputValue, setInputValue] = React.useState("");
-  const [todo, setTodo] = React.useState([]);
+  const [todos, setTodos] = React.useState([]);
 
   return (
     <div className="App">
@@ -13,10 +13,10 @@ function App() {
       <Form
         inputValue={inputValue}
         setInputValue={setInputValue}
-        todo={todo}
-        setTodo={setTodo}
+        todos={todos}
+        setTodos={setTodos}
       />
-      <List todo={todo} />
+      <List todos={todos} setTodos={setTodos} />
     </div>
   );
 }

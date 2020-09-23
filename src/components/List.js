@@ -2,12 +2,18 @@ import React from "react";
 import "../App.css";
 import Todo from "./Todo";
 
-const List = ({ todo }) => {
+const List = ({ todos, setTodos }) => {
   return (
     <div className="content">
       <ul className="ul">
-        {todo.map((todo) => (
-          <Todo text={todo.text} key={todo.id} />
+        {todos.map((todo) => (
+          <Todo
+            todo={todo}
+            todos={todos}
+            setTodos={setTodos}
+            text={todo.text}
+            key={todo.id}
+          />
         ))}
       </ul>
     </div>
