@@ -5,5 +5,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
+}
+
+.todo-item {
+  list-style-type: none;
 }
