@@ -18,14 +18,18 @@ const Todo = ({ text, todo, todos, setTodos }) => {
   };
 
   return (
-    <div className="todo">
-      <li className={`todo-item ${todo.completed && "completed"}`}>{text}</li>
-      <button onClick={completeHandler} className="complete-btn">
-        <i className="fas fa-check-circle"></i>
-      </button>
-      <button onClick={deleteHandler} className="delete-btn">
-        <i className="fas fa-minus-square"></i>
-      </button>
+    <div className={`todo ${todo.completed && "completed-todo"}`}>
+      <li className={`todo-item ${todo.completed && "completed-text"}`}>
+        {text}
+      </li>
+      <section className="buttons">
+        <button onClick={completeHandler} className="complete-btn">
+          <i className="fas fa-check-circle"></i>
+        </button>
+        <button onClick={deleteHandler} className="delete-btn">
+          <i className="fas fa-minus-square"></i>
+        </button>
+      </section>
     </div>
   );
 };

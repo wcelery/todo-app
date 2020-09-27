@@ -5,6 +5,8 @@ const Form = ({ inputValue, setInputValue, todos, setTodos, setStatus }) => {
     setInputValue(e.target.value);
   };
 
+  const isDisabled = inputValue === "" ? true : false;
+
   const submitHandler = (e) => {
     e.preventDefault();
     setTodos([
@@ -20,8 +22,9 @@ const Form = ({ inputValue, setInputValue, todos, setTodos, setStatus }) => {
 
   return (
     <form>
+      <h1 className="title">ToDo</h1>
       <input value={inputValue} onChange={inputHandler} type="text" />
-      <button onClick={submitHandler} type="submit">
+      <button disabled={isDisabled} onClick={submitHandler} type="submit">
         +
       </button>
       <select onChange={statusHandler} className="select">
