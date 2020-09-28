@@ -5,7 +5,9 @@ const Form = ({ inputValue, setInputValue, todos, setTodos, setStatus }) => {
     setInputValue(e.target.value);
   };
 
-  const isDisabled = inputValue === "" ? true : false;
+  const regexp = /^\w+( +\w+)*$/;
+
+  const isDisabled = regexp.exec(inputValue) ? false : true;
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -22,16 +24,28 @@ const Form = ({ inputValue, setInputValue, todos, setTodos, setStatus }) => {
 
   return (
     <form>
-      <h1 className="title">ToDo</h1>
-      <input value={inputValue} onChange={inputHandler} type="text" />
-      <button disabled={isDisabled} onClick={submitHandler} type="submit">
-        +
-      </button>
-      <select onChange={statusHandler} className="select">
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="uncompleted">Uncompleted</option>
-      </select>
+      <div className="wrapper">
+        <input
+          value={inputValue}
+          onChange={inputHandler}
+          type="text"
+          id="name"
+          placeholder="your thoughts"
+        />
+        <button
+          disabled={isDisabled}
+          onClick={submitHandler}
+          type="submit"
+          className="add-btn"
+        >
+          Add
+        </button>
+        <select onChange={statusHandler} className="select">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
     </form>
   );
 };
