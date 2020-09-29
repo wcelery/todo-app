@@ -1,14 +1,22 @@
+:root {
+  --main-bg-color: #121517;
+  --main-text-color: #eaf5fdb4;
+  --light-shadow: #0f1214;
+  --dark-shadow: #15181a;
+  --border-color: #eaf5fd27;
+}
+
 * {
   font-family: "Lato", sans-serif;
 }
 
 body {
-  background-color: #121517;
+  background-color: var(--main-bg-color);
 }
 
 .title {
   margin-block-start: 1.5em;
-  color: #eaf5fdb4;
+  color: var(--main-text-color);
 }
 
 form {
@@ -25,22 +33,32 @@ form {
 .select {
   margin-left: auto;
   margin-right: 1rem;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  border: 1px solid var(--border-color);
+  outline: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.select:focus {
+  border: 2px solid var(--border-color);
 }
 
 input {
   width: 30vh;
   border-radius: 2px;
   background: linear-gradient(145deg, #101315, #131619);
-  box-shadow: 20px 20px 60px #0f1214, -20px -20px 60px #15181a;
+  box-shadow: 20px 20px 60px var(--light-shadow), -20px -20px 60px #15181a;
   outline: none;
-  color: #eaf5fdb4;
-  border: 1px solid #eaf5fd27;
+  color: var(--main-text-color);
+  border: 1px solid var(--border-color);
   box-sizing: border-box;
   padding-left: 1rem;
 }
 
 input:focus {
-  border: 2px solid #eaf5fd27;
+  border: 2px solid var(--border-color);
 }
 
 .App {
@@ -70,14 +88,14 @@ input:focus {
 }
 
 .todo {
-  color: #eaf5fdb4;
+  color: var(--main-text-color);
   display: flex;
   border: 1px solid #eaf5fd04;
   margin: 20px 0 20px 0;
   padding: 1rem;
   border-radius: 2px;
-  background: #121517;
-  box-shadow: 18px 18px 35px #0f1214, -18px -18px 35px #15181a;
+  background: var(--main-bg-color);
+  box-shadow: 18px 18px 35px var(--light-shadow), -18px -18px 35px #15181a;
 }
 
 .todo-item {
