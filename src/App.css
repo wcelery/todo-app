@@ -16,6 +16,7 @@ body {
 
 .title {
   margin-block-start: 1.5em;
+  margin-block-end: 1.5em;
   color: var(--main-text-color);
 }
 

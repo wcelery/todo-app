@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="title">ToDo</h1>
+      <h1 className="title">whatcha gunna do?</h1>
       <Form
         inputValue={inputValue}
         setInputValue={setInputValue}
